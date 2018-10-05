@@ -1,6 +1,7 @@
-import { ModelsInterface } from './../interfaces/ModelsInterface';
-import { BaseModelInterface } from './../interfaces/BaseModelInterface';
 import * as Sequelize from 'sequelize'
+
+import { ModelsInterface } from './../interfaces/ModelsInterface'
+import { BaseModelInterface } from './../interfaces/BaseModelInterface'
 
 export interface PostAttributes {
     id?: number
