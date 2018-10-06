@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const bcryptjs_1 = require("bcryptjs");
 exports.default = (sequelize, DataTypes) => {
     const User = sequelize.define('User', {
         id: {
@@ -25,12 +26,23 @@ exports.default = (sequelize, DataTypes) => {
             }
         },
         photo: {
-            type: DataTypes.BLOB({
-                length: 'long'
-            }),
+            type: DataTypes.BLOB(),
             allowNull: true,
             defaultValue: true
         }
+    }, {
+        tableName: 'users',
+        hooks: {
+            beforeCreate: (user, options) => {
+                const salt = bcryptjs_1.genSaltSync();
+                user.password = bcryptjs_1.hashSync(user.password, salt);
+            }
+        }
     });
+    User.associate = (models) => {
+    };
+    User.prototype.isPassword = (encodePassword, password) => {
+        return bcryptjs_1.compareSync(password, encodePassword);
+    };
     return User;
 };

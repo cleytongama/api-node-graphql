@@ -46,9 +46,7 @@ export default (sequelize: Sequelize.Sequelize, DataTypes: Sequelize.DataTypes):
             }
         },
         photo: {
-            type: DataTypes.BLOB({
-                length: 'long'
-            }),
+            type: DataTypes.BLOB(),
             allowNull: true,
             defaultValue: true
         }

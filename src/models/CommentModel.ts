@@ -19,7 +19,7 @@ export interface CommentInterface extends Sequelize.Instance<CommentAttributes>,
 //Criando uma interface para o Model
 export interface CommentModel extends BaseModelInterface, Sequelize.Model<CommentInterface, CommentAttributes> { }
 
-export default (sequelize: Sequelize.Sequelize, DataTypes: Sequelize.DatatTypes): CommentModel => {
+export default (sequelize: Sequelize.Sequelize, DataTypes: Sequelize.DataTypes): CommentModel => {
 
     const Comment: CommentModel = sequelize.define('Comments', {
         id: {
