@@ -43,3 +43,5 @@ const userMutations = `
     deleteUser: Boolean
 `;
 exports.userMutations = userMutations;
+const teste = {};
+exports.teste = teste;

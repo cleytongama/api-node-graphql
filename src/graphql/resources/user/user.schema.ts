@@ -40,8 +40,11 @@ const userMutations = `
     updateUserPassword(input: UserUpdatePasswordInput!): Boolean
     deleteUser: Boolean
 `;
+const teste= {
 
+}
 export {
+    teste,
     userTypes,
     userQueries,
     userMutations
